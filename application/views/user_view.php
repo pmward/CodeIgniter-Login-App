@@ -9,14 +9,13 @@
     <h1>
       <?php
 
-      echo $results;
+      // echo $results;
 
-      // foreach ($results as $object) {
-      //
-      //   echo $object->username . "<br>";
-      //
-      //
-      // }
+         foreach ($results as $object) {
+
+         echo $object->username . "<br>";
+
+       }
 
 
 

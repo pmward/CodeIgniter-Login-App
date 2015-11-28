@@ -10,6 +10,7 @@
 <?php endif; ?>
 
 
+
 <?php echo form_open('users/login', $attributes); ?>
 
 <div class="form-group">
@@ -33,13 +34,28 @@
     <?php echo form_label('Password'); ?>
 
     <?php $password_data = array(
-        'name'          => 'Password',
+        'name'          => 'password',
         'id'            => 'password',
         'class'         => 'form-control',
         'placeholder'   => 'Enter Password'
     );
 
     echo form_password($password_data); ?>
+
+</div>
+
+<div class="form-group">
+
+    <?php echo form_label('Confirm Password'); ?>
+
+    <?php $data = array(
+        'name'          => 'confirm_password',
+        // 'id'            => 'password',
+        'class'         => 'form-control',
+        'placeholder'   => 'Confirm Password'
+    );
+
+    echo form_password($data); ?>
 
 </div>
 
