@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8888/udemy/php-edwin/ci/';
+$config['base_url'] = 'http://localhost:8888/braintree/vzero-test-harness';
 
 /*
 |--------------------------------------------------------------------------
@@ -511,3 +511,17 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Braintree API credentials
+|--------------------------------------------------------------------------
+|
+| include these here hard coded, need to dynamcially update these later based on
+| front end selection.
+|
+*/
+$config['braintree_environment'] = 'sandbox';
+$config['braintree_merchant_id'] = 'w2d7snyv86b6m993';
+$config['braintree_public_key'] = 'rm724h4nmjw6pg2n';
+$config['braintree_private_key'] = '87b54560036ce7f21ee95c866357341c';
