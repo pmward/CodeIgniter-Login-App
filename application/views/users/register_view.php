@@ -1,38 +1,7 @@
-<?php if($this->session->userdata('logged_in')): ?>
 
-<h2>Logout</h2>
+<h2>Register</h2>
 
-
-    <?php echo form_open('users/logout'); ?>
-
-
-<p>
-    <?php if($this->session->userdata('username')): ?>
-    <?php echo "you are logged in as " . $this->session->userdata('username'); ?>
-
-    <?php endif;?>
-</p>
-
-
-    <?php $data = array(
-
-        'class' => 'btn btn-primary',
-        'name' => 'submit',
-        'value' => 'logout'
-    ); ?>
-
-    <?php echo form_submit($data); ?>
-
-
-    <?php echo form_close(); ?>
-
-
-    <?php else: ?>
-
-
-<h2>Login form</h2>
-
-<?php $attributes = array('id' => 'login_form', 'class' => 'form_horizontal') ;?>
+<?php $attributes = array('id' => 'register_form', 'class' => 'form_horizontal') ;?>
 
     <?php if($this->session->flashdata('errors')): ?>
 
@@ -41,7 +10,53 @@
     <?php endif; ?>
 
 
-<?php echo form_open('users/login', $attributes); ?>
+<?php echo form_open('users/register', $attributes); ?>
+
+
+
+<div class="form-group">
+
+    <?php echo form_label('First Name'); ?>
+
+    <?php $inputData = array(
+        'name'          => 'first_name',
+        //'id'            => 'username',
+        'class'         => 'form-control',
+        'placeholder'   => 'Enter first name'
+    );
+    echo form_input($inputData); ?>
+
+</div>
+
+
+<div class="form-group">
+
+    <?php echo form_label('Last Name'); ?>
+
+    <?php $inputData = array(
+        'name'          => 'last_name',
+        //'id'            => 'last_name',
+        'class'         => 'form-control',
+        'placeholder'   => 'Enter last name'
+    );
+    echo form_input($inputData); ?>
+
+</div>
+
+<div class="form-group">
+
+    <?php echo form_label('Email'); ?>
+
+    <?php $inputData = array(
+        'name'          => 'email',
+        //'id'            => 'username',
+        'class'         => 'form-control',
+        'placeholder'   => 'Enter email'
+    );
+    echo form_input($inputData); ?>
+
+</div>
+
 
 <div class="form-group">
 
@@ -104,6 +119,3 @@
 
 
 <?php echo form_close(); ?>
-
-
-<?php endif; ?>

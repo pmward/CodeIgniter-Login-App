@@ -10,15 +10,24 @@ class Users extends CI_Controller {
 
     $this->load->view('user_view', $data);
 
-
     // foreach ($result as $object) {
     //
     //   echo $object->id;
     // }
 
-
-
   }
+
+
+    public function register() {
+
+        //$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|min_length[3]');
+
+
+        $data['main_view'] = 'users/register_view';
+        $this->load->view('layouts/main', $data);
+
+    }
+
 
   public function login() {
 
@@ -35,7 +44,9 @@ class Users extends CI_Controller {
           );
 
           $this->session->set_flashdata($data);
+
           redirect('home');
+
 
       } else {
 
@@ -53,10 +64,12 @@ class Users extends CI_Controller {
                     );
 
                 $this->session->set_userdata($user_data);
-
                 $this->session->set_flashdata('login_success', 'You are now logged in');
 
-                redirect('home/index');
+                $data['main_view'] = "admin_view";
+                $this->load->view('layouts/main', $data);
+
+                //redirect('home/index');
 
                 }   else {
 
@@ -66,6 +79,14 @@ class Users extends CI_Controller {
                     }
         }
 
+
+    }
+
+    public function logout() {
+
+        $this->session->sess_destroy();
+
+        redirect('home/index');
 
 
     }
