@@ -29,8 +29,8 @@
            <li ><a href="<?php echo base_url();?>/users/register">Register <span class="sr-only">(current)</span></a></li>
 
                </ul>
-           </li>
-         </ul>
+
+
 
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Link</a></li>

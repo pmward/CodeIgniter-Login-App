@@ -29,13 +29,18 @@ class Users extends CI_Controller {
 
         if($this->form_validation->run() == FALSE) {
 
-             //redirect('http://google.com');
-
             $data['main_view'] = 'users/register_view';
             $this->load->view('layouts/main', $data);
 
         } else {
 
+            if($this->user_model->create_user()) {
+                redirect('home/index');
+
+            } else {
+
+
+            }
 
 
         }
