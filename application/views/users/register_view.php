@@ -110,7 +110,7 @@
     <?php $btn_data = array(
         'name'    => 'submit',
         'class'   => 'btn btn-primary',
-        'value'   => 'Login'
+        'value'   => 'Register'
     );
 
     echo form_submit($btn_data); ?>
