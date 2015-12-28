@@ -1,12 +1,16 @@
-<h1>Project Name</h1>
+<div class="col-xs-9">
+    <h1>Project Name</h1>
+</div>
 
-<ul class="list-group">
 
-    <h3>Project Actions</h3>
+<div class="col-xs-3 pull-right">
+    <ul class="list-group">
 
-    <!--<li class="list-group-item"><a href="<?php echo base_url(); ?>/tasks/create/<?php echo $project->id; ?>">Create Task</a></li>
-    -->
-    <li class="list-group-item"><a href="">Edit Project</a></li>
-    <li class="list-group-item"><a href="">Delete Project</a></li>
+        <h4>Project Actions</h4>
 
-</ul>
+        <!--<li class="list-group-item"><a href="<?php echo base_url(); ?>/tasks/create/<?php echo $project->id; ?>">Create Task</a></li>
+        -->
+        <li class="list-group-item"><a href="">Edit Project</a></li>
+        <li class="list-group-item"><a href="">Delete Project</a></li>
+    </ul>
+</div>

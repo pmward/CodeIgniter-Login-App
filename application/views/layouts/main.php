@@ -31,9 +31,13 @@
                </ul>
 
 
-
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
+
+                  <?php if($this->session->userdata('logged_in')): ?>
+
+                    <li><a href="<?php echo base_url(); ?>/users/logout">Logout</a></li>
+
+                  <?php endif; ?>
 
               </ul>
             </div><!-- /.navbar-collapse -->
