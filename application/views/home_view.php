@@ -6,6 +6,12 @@
 
     <?php endif; ?>
 
+    <?php if($this->session->flashdata('no_access')): ?>
+
+    <?php echo $this->session->flashdata('no_access'); ?>
+
+    <?php endif; ?>
+
 
      <?php if($this->session->flashdata('user_registered')): ?>
 
