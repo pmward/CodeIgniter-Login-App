@@ -1,7 +1,7 @@
 <div class="col-xs-9">
 
-    <h1>Project Name:<?php echo $project_data->project_name; ?></h1>
-    <p>Date created: <?php echo $project_data->date_created; ?></p>
+    <h1>Project Name:<?php echo " " . $project_data->project_name; ?></h1>
+    <p>Date created: <?php echo " " . $project_data->date_created; ?></p>
 
     <h3>Description</h3>
     <p><?php echo $project_data->project_body; ?></p>

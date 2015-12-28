@@ -41,6 +41,38 @@ class Projects extends CI_Controller {
     }
 
 
+    public function create()
+    {
+        $this->form_validation->set_rules('project_name', 'Project Name', 'trim|required');
+        $this->form_validation->set_rules('project_body', 'Project Decription', 'trim|required');
+
+        if($this->form_validation->run() == FALSE) {
+
+            $data['main_view'] = 'projects/create_project';
+            $this->load->view('layouts/main', $data);
+
+        } else {
+
+            $data = array(
+
+                'project_user_id' => $this->session->userdata('user_id'),
+                'project_name' => $this->input->post('project_name'),
+                'project_body' => $this->input->post('project_body')
+            );
+
+            if($this->project_model->create_project($data)) {
+
+                $this->session->set_flashdata('project_created', 'Your project has been created');
+
+                redirect("projects/index");
+
+
+            }
+
+        }
+    }
+
+
 
 }
 
