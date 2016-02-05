@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8888/braintree/vzero-test-harness';
+$config['base_url'] = 'http://localhost:8888/braintree/vzero-test-harness/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost:8888/braintree/vzero-test-harness';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -525,3 +525,10 @@ $config['braintree_environment'] = 'sandbox';
 $config['braintree_merchant_id'] = 'w2d7snyv86b6m993';
 $config['braintree_public_key'] = 'rm724h4nmjw6pg2n';
 $config['braintree_private_key'] = '87b54560036ce7f21ee95c866357341c';
+
+$config['braintree_merchant_account_id'] = array(
+    'paypal_USD' => 'USD',
+    'paypal_GBP' => 'GBP',
+    'paypal_EUR' => 'EUR',
+    'UK-MID-no-Amex' => 'paypal_GBP_amex_removed'
+);

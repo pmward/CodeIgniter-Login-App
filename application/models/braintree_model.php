@@ -18,6 +18,17 @@ class Braintree_model extends CI_Model {
 
     public function generateToken($data) {
 
+        // Braintree_Configuration::environment($this->config->item('braintree_environment'));
+        // Braintree_Configuration::merchantId($this->config->item('braintree_merchant_id'));
+        // Braintree_Configuration::publicKey($this->config->item('braintree_public_key'));
+        // Braintree_Configuration::privateKey($this->config->item('braintree_private_key'));
+
+        Braintree_Configuration::environment($this->input->post('clientToken-environment'));
+        Braintree_Configuration::merchantId($this->input->post('clientToken-merchantId'));
+        Braintree_Configuration::publicKey($this->input->post('clientToken-publicKey'));
+        Braintree_Configuration::privateKey($this->input->post('clientToken-privateKey'));
+
+
         $client_token = Braintree_ClientToken::generate($data);
 
         if($client_token) {
@@ -40,6 +51,8 @@ class Braintree_model extends CI_Model {
 		    Braintree_Configuration::publicKey($this->config->item('braintree_public_key'));
 		    Braintree_Configuration::privateKey($this->config->item('braintree_private_key'));
 
+
+
             $transaction = Braintree_Transaction::sale($data);
 
             if($transaction) {
@@ -55,7 +68,7 @@ class Braintree_model extends CI_Model {
 
         }
 
-    public function refundTransaction($transaction_id, $amount) {
+    public function refundTransaction($data) {
 
         $transaction = Braintree_Transaction::refund($transaction_id, $amount);
 
@@ -90,7 +103,7 @@ class Braintree_model extends CI_Model {
 
     public function getTransaction($transaction_id) {
 
-        $transaction = Braintree_Transaction::submitForSettlement($transaction_id, $amount);
+        $transaction = Braintree_Transaction::submitForSettlement($transaction_id);
 
             if($transaction) {
 
