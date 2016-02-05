@@ -126,8 +126,6 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-<<<<<<< HEAD
+
 $autoload['model'] = array('braintree_model');
-=======
-$autoload['model'] = array('user_model', 'project_model');
->>>>>>> origin/master
+//$autoload['model'] = array('user_model', 'project_model');

@@ -2,6 +2,25 @@
 
 class BraintreeTransaction extends CI_Controller {
 
+
+        public function __construct() {
+
+            parent::__construct();
+            // Your own constructor code
+
+            if(!$this->session->userdata('client_token')) {
+
+                $this->session->set_flashdata('no_client_token', 'Enter your API credentials or oAuth access token');
+
+                redirect('BraintreeClientToken/index');
+
+            }
+
+
+
+
+        }
+
     public function index() {
 
 		$data['main_view'] = "transaction/index";
@@ -9,9 +28,7 @@ class BraintreeTransaction extends CI_Controller {
 
 	}
 
-    public function sale()
-
-    {
+    public function sale() {
 
         /* get a client token by calling client token model call
         | or retrieve the client token from Session

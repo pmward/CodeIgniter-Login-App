@@ -1,10 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
-<<<<<<< HEAD
 RewriteBase /braintree/vzero-test-harness/
-=======
-RewriteBase /udemy/php-edwin/ci/
->>>>>>> origin/master
 
 RewriteCond %{REQUEST_URI} ^system.*
 RewriteRule ^(.*)$ /index.php?/$1 [L]
@@ -15,8 +11,4 @@ RewriteRule ^(.*)$ /index.php?/$1 [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?/$1 [L]
-<<<<<<< HEAD
 </IfModule>
-=======
-</IfModule>
->>>>>>> origin/master

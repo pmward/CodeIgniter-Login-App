@@ -8,27 +8,27 @@
 
 class BraintreeClientToken extends CI_Controller {
 
-    public function __construct() {
-
-        parent::__construct();
-
-        if(!$this->session->userdata('client_token')) {
-
-            $config['braintree_environment'] = Braintree_Configuration::environment($this->input->post('clientToken-environment'));
-            $config['braintree_merchant_id'] = Braintree_Configuration::merchantId($this->input->post('clientToken-merchantId'));
-            $config['braintree_public_key'] = Braintree_Configuration::publicKey($this->input->post('clientToken-publicKey'));
-            $config['braintree_private_key'] = Braintree_Configuration::privateKey($this->input->post('clientToken-privateKey'));
-
-        }
-        // else {
-        //
-        //         $this->session->set_flashdata('client_token_not_created', 'a client token must be created before performing transaction processing');
-        //
-        //         redirect("BraintreeClienttoken/index");
-        //
-        //     }
-
-        }
+//    public function __construct() {
+//
+//        parent::__construct();
+//
+//        if(!$this->session->userdata('client_token')) {
+//
+//            $config['braintree_environment'] = Braintree_Configuration::environment($this->input->post('clientToken-environment'));
+//            $config['braintree_merchant_id'] = Braintree_Configuration::merchantId($this->input->post('clientToken-merchantId'));
+//            $config['braintree_public_key'] = Braintree_Configuration::publicKey($this->input->post('clientToken-publicKey'));
+//            $config['braintree_private_key'] = Braintree_Configuration::privateKey($this->input->post('clientToken-privateKey'));
+//
+//        }
+//        // else {
+//        //
+//        //         $this->session->set_flashdata('client_token_not_created', 'a client token must be created before performing transaction processing');
+//        //
+//        //         redirect("BraintreeClienttoken/index");
+//        //
+//        //     }
+//
+//        }
 
 
 
@@ -37,16 +37,22 @@ class BraintreeClientToken extends CI_Controller {
         $data['main_view'] = "client_token/index";
 
         $this->load->view('layouts/main', $data);
+        $this->load->view('home_view');
 
     }
 
+
     public function generate() {
 
-        $params['merchantAccountId'] = $this->input->post('clientToken-merchantAcountId');
-        $params['customerId'] = $this->input->post('clientToken-customerId');
+         // $this->load->model('braintree_model');
 
-        $data['merchantAccountId'] = $this->session->userdata('');
-        $data['merchantAccountId'] = $this->session->userdata('');
+        //$params = array();
+        //$data = array();
+        $data['merchantAccountId'] = $this->input->post('clientToken-merchantAcountId');
+        $data['customerId'] = $this->input->post('clientToken-customerId');
+
+        //$data['merchantAccountId'] = $this->session->userdata('');
+        // $data['merchantAccountId'] = $this->session->userdata('');
         // $data = array();
         // $data['customer_id'] = $this->input->post('customerId');
         // $data['merchant_account_id'] = $this->input->post('merchantAccountId');
@@ -54,7 +60,9 @@ class BraintreeClientToken extends CI_Controller {
         // 1) ensure this controller can take a merchantAcountId as the 3rd parmeter in URL and use it to generate token_name
         // 2) Store the client token in a session
 
-        $data['client_token'] = $this->braintree_model->generateToken($params);
+        //echo "<pre>" . var_dump($params) . "</pre>";
+
+        $data['client_token'] = $this->braintree_model->generateToken($data);
 
         if(isset($data['client_token'])) {
 

@@ -99,7 +99,7 @@
                            'id'         => 'clientToken-merchantAcountId',
                            'class'      => 'form-control input-sm'
                       );
-                      echo form_dropdown('merchantAcountId', $options, '', $js); ?>
+                      echo form_dropdown('clientToken-merchantAcountId', $options, '', $js); ?>
 
                   </div>
 

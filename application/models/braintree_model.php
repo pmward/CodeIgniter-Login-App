@@ -18,10 +18,10 @@ class Braintree_model extends CI_Model {
 
     public function generateToken($data) {
 
-        // Braintree_Configuration::environment($this->config->item('braintree_environment'));
-        // Braintree_Configuration::merchantId($this->config->item('braintree_merchant_id'));
-        // Braintree_Configuration::publicKey($this->config->item('braintree_public_key'));
-        // Braintree_Configuration::privateKey($this->config->item('braintree_private_key'));
+//        Braintree_Configuration::environment($this->config->item('braintree_environment'));
+//        Braintree_Configuration::merchantId($this->config->item('braintree_merchant_id'));
+//        Braintree_Configuration::publicKey($this->config->item('braintree_public_key'));
+//        Braintree_Configuration::privateKey($this->config->item('braintree_private_key'));
 
         Braintree_Configuration::environment($this->input->post('clientToken-environment'));
         Braintree_Configuration::merchantId($this->input->post('clientToken-merchantId'));

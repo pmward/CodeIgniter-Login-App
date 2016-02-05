@@ -19,10 +19,14 @@
           </div>
       <?php endif; ?>
 
+      <?php echo "<pre>"; ?>
+      <?php echo print_r($_SESSION)  ?>
+      <?php echo  "</pre>"; ?>
+
 
       <?php $attributes = array('id' => 'transaction_form') ;?>
 
-      <?php echo form_open('index.php/braintreeTransaction/sale', $attributes); ?>
+      <?php echo form_open('braintreeTransaction/sale', $attributes); ?>
 
       <?php echo form_fieldset('<h3>General</h3>'); ?>
 
