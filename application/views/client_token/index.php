@@ -2,16 +2,35 @@
 <div class="row">
       <div class="col-md-6">
 
-
         <div class="panel panel-default">
           <div class="panel-heading">
             <h1 class="panel-title">Create a Client Token</h1>
           </div>
           <div class="panel-body">
 
-              <p>
-                  This client token will be stored in session and used for the next step
-              </p><br />
+              <p>This client token will be stored in session and used for the next step</p><br />
+
+            <!--   check is client token & API crednetials is available, if not flash warning message-->
+            <?php if($this->session->flashdata('client_token_created')): ?>
+
+                <div class="alert alert-success" role="alert">
+                <?php echo $this->session->flashdata('client_token_created'); ?>
+                </div>
+
+            <?php endif; ?>
+
+
+
+            <?php if(!$this->session->userdata('client_token')): ?>
+
+            <div class="alert alert-warning" role="alert">
+
+                <?php echo "You must enter your API credentials or oAuth token before starting"; ?>
+
+            </div>
+
+            <?php endif; ?>
+
 
 
               <?php $attributes = array('id' => 'clientToken_form') ;?>

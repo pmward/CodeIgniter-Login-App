@@ -13,13 +13,10 @@ class BraintreeTransaction extends CI_Controller {
                 $this->session->set_flashdata('no_client_token', 'Enter your API credentials or oAuth access token');
 
                 redirect('BraintreeClientToken/index');
-
             }
 
-
-
-
         }
+
 
     public function index() {
 
